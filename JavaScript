@@ -1,0 +1,130 @@
+//(1) generating  a random number
+const a = Math.random();
+console.log(a);
+
+//(2)ind Intersection of Two Arrays
+function intersection(arr1, arr2) {
+    const set1 = new Set(arr1);
+    return [...new Set(arr2.filter(item => set1.has(item)))];
+}
+
+//(3)sweet alert
+document.addEventListener('DOMContentLoaded', function() {
+        const errorMsg = document.getElementById('errorMsg').value;
+        
+        if(invalidMsg){
+            Swal.fire({
+            title: 'Invalid details',
+            showConfirmButton: true,
+            confirmButtonText: 'OK',
+            confirmButtonColor: 'green',
+        })
+        }
+});
+
+//(4) Find Missing Number
+
+function findMissingNumber(arr) {
+    const n = arr.length;
+    const expectedSum = (n * (n + 1)) / 2;
+    const actualSum = arr.reduce((sum, num) => sum + num, 0);
+    return expectedSum - actualSum;
+}
+
+//(5) Rotate Array
+
+function rotateArray(arr, steps) {
+    const n = arr.length;
+    steps = steps % n;
+    return arr.slice(-steps).concat(arr.slice(0, -steps));
+}
+
+//(6)Even or odd
+
+const number = prompt("Enter a number: ");
+
+if(number % 2 == 0) {
+    console.log("The number is even.");
+}
+
+else {
+    console.log("The number is odd.");
+}
+
+//(7)Multiplication table
+const number = parseInt(prompt('Enter an integer: '));
+
+const range = parseInt(prompt('Enter a range: '));
+
+for(let i = 1; i <= range; i++) {
+    const result = i * number;
+    console.log(`${number} * ${i} = ${result}`);
+}
+
+//(8)Amstrong number
+
+let sum = 0;
+const number = prompt('Enter a three-digit positive integer: ');
+
+let temp = number;
+while (temp > 0) {
+    let remainder = temp % 10;
+
+   sum += remainder ** numberOfDigits;
+
+    temp = parseInt(temp / 10); 
+}
+if (sum == number) {
+    console.log(`${number} is an Armstrong number`);
+}
+else {
+    console.log(`${number} is not an Armstrong number.`);
+}
+
+//(9)Calculator
+let result;
+
+const operator = prompt('Enter operator ( either +, -, * or / ): ');
+
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
+
+switch(operator) {
+    case '+':
+         result = number1 + number2;
+        console.log(`${number1} + ${number2} = ${result}`);
+        break;
+
+    case '-':
+         result = number1 - number2;
+        console.log(`${number1} - ${number2} = ${result}`);
+        break;
+
+    case '*':
+         result = number1 * number2;
+        console.log(`${number1} * ${number2} = ${result}`);
+        break;
+
+    case '/':
+         result = number1 / number2;
+        console.log(`${number1} / ${number2} = ${result}`);
+        break;
+
+    default:
+        console.log('Invalid operator');
+        break;
+}
+
+//(10)sorting words
+
+const string = prompt('Enter a sentence: ');
+
+const words = string.split(' ');
+
+words.sort();
+
+console.log('The sorted words are:');
+
+for (const element of words) {
+  console.log(element);
+}
